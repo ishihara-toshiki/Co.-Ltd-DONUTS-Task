@@ -210,7 +210,6 @@ dd,
 th,
 td,
 pre {
-  word-break: break-strict;
   line-break: strict;
 }
 
