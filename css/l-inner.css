@@ -1,0 +1,12 @@
+.l-inner {
+  width: 100%;
+  max-width: 1112px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 736px) {
+  .l-inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+/*# sourceMappingURL=l-inner.css.map */

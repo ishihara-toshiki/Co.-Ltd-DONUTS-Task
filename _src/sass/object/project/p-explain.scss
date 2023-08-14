@@ -1,0 +1,26 @@
+// @import "../core/variables.scss";
+
+//p-explain
+
+.p-explain {
+    background: #FFFFFF;
+}
+
+.p-explain__content--guid {
+    font-size: 20px;
+    color: $accentColor;
+    font-weight: bold;
+
+    &:not(:first-child) {
+        margin-top: 32px;
+    }
+}
+
+.p-explain__content--supple {
+    font-size: 12px;
+    margin-top: 16px;
+
+    @media #{$sp} {
+        margin-top: 24px;
+    }
+}

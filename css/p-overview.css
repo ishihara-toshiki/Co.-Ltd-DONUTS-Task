@@ -1,0 +1,18 @@
+.p-overview {
+  background: #F7F9FB;
+}
+
+.p-overview__content--title {
+  margin-bottom: 8px;
+  font-weight: normal;
+}
+
+.p-overview__content--guid {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.p-overview__content--text {
+  font-weight: normal;
+}
+/*# sourceMappingURL=p-overview.css.map */

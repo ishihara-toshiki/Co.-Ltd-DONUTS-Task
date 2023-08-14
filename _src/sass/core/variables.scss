@@ -2,7 +2,8 @@
 // breakpoint
 //*******************************
 $sp: "only screen and (max-width: 736px)";
-$pc: "only screen and (min-width: 737px)";
+$tab: "only screen and (min-width: 737px)";
+$pc: "only screen and (min-width: 1112px)";
 
 //*******************************
 // contents width
@@ -12,25 +13,32 @@ $baseContentsWidth: 1112px;
 //*******************************
 // default color
 //*******************************
-$baseColor: #333;
+$baseColor: #333333;
 
 //*******************************
 // text color, link color
 //*******************************
-$baseTextColor: #333;
-$linkTextColor: #333;
+$baseTextColor: #333333;
+$linkTextColor: #333333;
 $baseHoverColor: #4a90e2;
 $baseActiveColor: #4a90e2;
-$baseVisitedColor: #333;
+$accentColor: #4a90e2;
+$baseColorThin: #E7F0FC;
+$bgColor: #F7F9FB;
+$redColor: #FF0000;
+$whiteColor: #FFFFFF;
+$grayColor: #E4E4E4;
+$baseVisitedColor: #333333;
 
 //*******************************
 // font size
 //*******************************
-$baseFontSize: 14px;
+$baseFontSize: 16px;
 $baseLetterSpacing: 0;
 $baseLineHeight: 1.75;
 
 //*******************************
 // fontfamily
 //*******************************
-$baseFontFamily: "Noto Sans JP";
+$baseFontFamily: "Noto Sans JP", sans-serif;
+

@@ -1,0 +1,21 @@
+//header
+
+.l-header {
+    background: linear-gradient(to right, rgb(6,165,241) 20%, rgb(2,101,197));
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 32px;
+    padding-top: 36px;
+    padding-bottom: 40px;
+
+
+    @media #{$sp} {
+        background: #037CD5;
+    }
+
+}
+
+.l-header__title {
+    letter-spacing: 1.8px;
+}
+

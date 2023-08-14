@@ -1,0 +1,33 @@
+// @import "../core/variables.scss";
+//p-recent-weather
+
+.p-recent-weather {
+    background: $bgColor;
+}
+
+.p-recent-weather__content {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media #{$sp} {
+        display: block;
+    }
+}
+
+.p-recent-weather__content--left {
+    width: 58%;
+    margin-right: auto;
+
+    @media #{$sp} {
+        width: 100%;
+    }
+}
+
+.p-recent-weather__content--right {
+    width: 40%;
+
+    @media #{$sp} {
+        width: 100%;
+        margin-top: 30px;
+    }
+}

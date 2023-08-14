@@ -1,0 +1,19 @@
+.section-title {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 32px;
+  font-weight: bold;
+  position: relative;
+}
+.section-title::after {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: calc(100% + 2px);
+  transform: translateX(-50%);
+  width: 80px;
+  height: 8px;
+  background: linear-gradient(to right, rgb(6, 165, 241) 20%, rgb(2, 101, 197));
+  border-radius: 8px;
+}
+/*# sourceMappingURL=section-title.css.map */

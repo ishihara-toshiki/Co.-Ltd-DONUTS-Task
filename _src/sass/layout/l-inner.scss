@@ -1,0 +1,24 @@
+// @import "../core/variables.scss";
+
+//inner 
+
+.l-inner {
+    width: 100%;
+    max-width: $baseContentsWidth;
+    margin: 0 auto;
+
+    // @include mq('sp') {
+    //     padding-left: 16px;
+    //     padding-right: 16px;
+    // }
+
+    @media #{$tab} {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    @media #{$sp} {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}

@@ -1,0 +1,65 @@
+//c-week-weather__card
+
+.c-week-weather__card {
+    color: #424242;
+    padding-bottom: 23px;
+    background: $bgColor;
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 0px 4px 20px 0px rgba(161, 159, 159, 0.6);
+
+}
+
+.c-week-weather__card--top {
+    background: $baseColorThin;
+    color: $accentColor;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.c-week-weather__card--weather-title {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.c-week-weather__card--weather-img {
+    width: 50px;
+    height: 33px;
+    margin: 20px auto 0;
+}
+
+.c-week-weather__card--temp {
+    display: flex;
+    width: 100%;
+    max-width: 130px;
+    margin: 40px auto 0;
+}
+
+.c-week-weather__card--temp__left {
+    width: 48%;
+    margin-right: auto;
+    color: $redColor;
+    text-align: center;
+}
+
+.c-week-weather__card--temp__right {
+    width: 48%;
+    color: $accentColor;
+    text-align: center;
+}
+
+.c-week-weather__card--temp__left--text {
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.c-week-weather__card--temp__right--text {
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+
+}

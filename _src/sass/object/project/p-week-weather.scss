@@ -1,0 +1,26 @@
+//p-week-weather
+
+.p-week-weather {
+    background: $whiteColor;
+}
+
+.p-week-weather__content {
+    display: flex;
+    justify-content: space-between;
+
+    @media #{$sp} {
+        display: block;
+    }
+}
+
+.p-week-weather__card {
+    width: 19%;
+
+    @media #{$sp} {
+        width: 100%;
+        
+        &:not(:first-child) {
+            margin-top: 32px;
+        }
+    }
+}

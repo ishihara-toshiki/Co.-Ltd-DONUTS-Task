@@ -1,0 +1,18 @@
+.p-recent-weather {
+  background: #000;
+}
+
+.p-recent-weather__content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.p-recent-weather__content--left {
+  width: 56%;
+  margin-right: auto;
+}
+
+.p-recent-weather__content--right {
+  width: 40%;
+}
+/*# sourceMappingURL=p-recent-weather.css.map */

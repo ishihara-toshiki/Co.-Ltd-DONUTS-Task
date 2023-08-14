@@ -8,7 +8,8 @@ body {
   min-width: $baseContentsWidth;
   background-color: #fff;
   color: $baseTextColor;
-  font-family: $baseFontFamily;
+  // font-family: $baseFontFamily;
+  font-family: 'Noto Sans JP', sans-serif;
   letter-spacing: $baseLetterSpacing;
   line-height: $baseLineHeight;
 

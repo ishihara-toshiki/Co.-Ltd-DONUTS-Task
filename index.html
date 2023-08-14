@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <title>試験コーディング</title>
+  </head>
+  <body>
+
+    <header class="l-header">
+        <h1 class="l-header__title">DONUTS FRONTEND EXAM</h1>
+    </header>
+
+    <section class="l-section p-overview">
+        <div class="l-inner">
+            <h2 class="c-section-title">試験概要</h2>
+            <div class="p-overview__content">
+                <p class="p-overview__content--title">コーディング課題（試験内容）に取り組んでいただきたく、ご案内お願いいたします。</p>
+
+                <p class="p-overview__content--guid">・フロントエンドエンジニア職に応募の方</p>
+                <p class="p-overview__content--text">　・1 〜 4すべてご対応ください。</p>
+                <p class="p-overview__content--text">　・「4. 提出方法」に関して、githubでの提出を推奨します。</p>
+
+                <p class="p-overview__content--guid">・デザイナー職に応募の方</p>
+                <p class="p-overview__content--text">　・「3. APIによる反映」 の対応は不要です。</p>
+                <p class="p-overview__content--text">　・「4. 提出方法」に関して、githubでの提出が難しい場合、圧縮ファイルでの提出でも可です。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="l-section p-explain">
+        <div class="l-inner">
+            <h2 class="c-section-title">試験内容</h2>
+            <div class="p-explain__content">
+                <p class="p-explain__content--guid">1. デザインに従ってコーディングをしてください</p>
+                <p class="p-explain__content--text"><span class="u-url">https://xd.adobe.com/view/6326e7bd-2396-4838-8359-32f096cac59d-3675/</span>のデザインに沿って(問題文等も含めて)コーディングをしてください。 なお、ベースとなるソースコードは<span class="u-url">https://github.com/d-o-n-u-t-s/web-frontend-exam/</span>を Cloneしてご使用ください。</p>
+                
+                <p class="p-explain__content--guid">2. レスポンシブにコーディングしてください</p>
+                <p class="p-explain__content--text">PC、モバイルそれぞれで何か1つのブラウザで確認できる状態にしてください。<br>なお、提出時に確認済みブラウザを共有下さい。</p>
+
+                <p class="p-explain__content--guid">3. 以下のAPIを使って、天気情報を動的に取得し反映させてください</p>
+                <p class="p-explain__content--text">・Open-Meteo WeatherForecastAPI ... <span class="u-url">https://open-meteo.com/en/docs/</span><br>・天気予報 API（livedoor 天気互換） ... <span class="u-url">https://weather.tsukumijima.net/</span></p>
+                <div class="p-explain__content--supple">
+                    <p class="p-explain__content--supple__text">※ weatherCodeに対応する天候名とアイコンの取得は<span class="u-url">getWeatherInfo.js</span>を使用してよいものとします。</p>
+                    <p class="p-explain__content--supple__text">※ どちらも観測地点は東京とし、(緯度, 経度) = (35.6785, 139.6823) とします。</p>
+                    <p class="p-explain__content--supple__text">※ APIからの取得が難しい場合は、レイアウトのみ再現してください。</p>    
+                </div>
+
+                <p class="p-explain__content--guid">4. 以下のいずれかの方法で提出をしてください</p>
+                <p class="p-explain__content--text">・ご自身のgithub上にリポジトリを作成し、そこにpushした上で、リポジトリURLを共有する。<br>・clone先のディレクトリを.gitディレクトリを含んだ状態で圧縮(zip, tar等)し、添付して提出する。</p>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="l-section p-recent-weather">
+        <div class="l-inner">
+            <h2 class="c-section-title">今日/明日の天気</h2>
+            <div class="p-recent-weather__content">
+                <div class="p-recent-weather__content--left">
+
+                    <div class="c-recent-weather__card">
+                        <div class="c-recent-weather__card--top c-recent-weather__card--today">
+                            <p class="c-recent-weather__card--top__title">
+                                今日の天気
+                            </p>
+                        </div>
+                        <p class="c-recent-weather__card--weather-title" id="js-weather1-title"></p>
+                        <div class="c-recent-weather__card--weather-img">
+                            <img src="" alt="天気画像" id="js-weather1-img">
+                            <!-- <img src="./static/img/101.svg" alt="天気画像"> -->
+                        </div>
+                        <div class="c-recent-weather__card--temp">
+                            <div class="c-recent-weather__card--temp__left">
+                                <p class="c-recent-weather__card--temp__left--text" id="js-weather1-temp-max"> </p><p class="u-fz16">℃</p>
+                                <p class="c-recent-weather__card--temp__left--subtext" id="js-weather1-temp-max-before"> </p>
+                            </div>
+                            <div class="c-recent-weather__card--temp__right">
+                                <p class="c-recent-weather__card--temp__right--text" id="js-weather1-temp-min"> </p><p class="u-fz16">℃</p>
+                                <p class="c-recent-weather__card--temp__right--subtext" id="js-weather1-temp-min-before"> </p>
+                            </div>
+                        </div>
+                        <div class="c-recent-weather__card--times">
+                            <div class="c-recent-weather__card--time">
+                                <p class="c-recent-weather__card--time__text">時間</p>
+                                <p class="c-recent-weather__card--time__percent">降水</p>
+                            </div>
+                            <div class="c-recent-weather__card--time">
+                                <p class="c-recent-weather__card--time__text">0-6時</p>
+                                <p class="c-recent-weather__card--time__percent" id="js-weather1-percent-06"> </p>
+                            </div>
+                            <div class="c-recent-weather__card--time">
+                                <p class="c-recent-weather__card--time__text">6-12時</p>
+                                <p class="c-recent-weather__card--time__percent" id="js-weather1-percent-612"> </p>
+                            </div>
+                            <div class="c-recent-weather__card--time">
+                                <p class="c-recent-weather__card--time__text">12-18時</p>
+                                <p class="c-recent-weather__card--time__percent" id="js-weather1-percent-1218"> </p>
+                            </div>
+                            <div class="c-recent-weather__card--time">
+                                <p class="c-recent-weather__card--time__text">18-24時</p>
+                                <p class="c-recent-weather__card--time__percent" id="js-weather1-percent-1824"> </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="p-recent-weather__content--right">
+                    <div class="c-recent-weather__card">
+                        <div class="c-recent-weather__card--top c-recent-weather__card--tomorrow">
+                            <p class="c-recent-weather__card--top__title">
+                                明日の天気
+                            </p>
+                        </div>
+                        <p class="c-recent-weather__card--weather-title" id="js-weather2-title"></p>
+                        <div class="c-recent-weather__card--weather-img">
+                            <img src="" alt="天気画像" id="js-weather2-img">
+                        </div>
+                        <div class="c-recent-weather__card--temp">
+                            <div class="c-recent-weather__card--temp__left">
+                                <p class="c-recent-weather__card--temp__left--text" id="js-weather2-temp-max"> </p><p class="u-fz16">℃</p>
+                                <p class="c-recent-weather__card--temp__left--subtext" id="js-weather2-temp-max-before"> </p>
+                            </div>
+                            <div class="c-recent-weather__card--temp__right">
+                                <p class="c-recent-weather__card--temp__right--text" id="js-weather2-temp-min"> </p><p class="u-fz16">℃</p>
+                                <p class="c-recent-weather__card--temp__right--subtext" id="js-weather2-temp-min-before"> </p>
+                            </div>
+                        </div>
+                        <div class="c-recent-weather__card--times">
+                            <div class="c-recent-weather__card--time">
+                                <p class="c-recent-weather__card--time__text">時間</p>
+                                <p class="c-recent-weather__card--time__percent">降水</p>
+                            </div>
+                            <div class="c-recent-weather__card--time">
+                                <p class="c-recent-weather__card--time__text">0-6時</p>
+                                <p class="c-recent-weather__card--time__percent" id="js-weather2-percent-06"></p>
+                            </div>
+                            <div class="c-recent-weather__card--time">
+                                <p class="c-recent-weather__card--time__text">6-12時</p>
+                                <p class="c-recent-weather__card--time__percent" id="js-weather2-percent-612"></p>
+                            </div>
+                            <div class="c-recent-weather__card--time">
+                                <p class="c-recent-weather__card--time__text">12-18時</p>
+                                <p class="c-recent-weather__card--time__percent" id="js-weather2-percent-1218"></p>
+                            </div>
+                            <div class="c-recent-weather__card--time">
+                                <p class="c-recent-weather__card--time__text">18-24時</p>
+                                <p class="c-recent-weather__card--time__percent" id="js-weather2-percent-1824"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="l-section p-week-weather">
+        <div class="l-inner">
+            <h2 class="c-section-title">今週の天気</h2>
+            <div class="p-week-weather__content">
+
+                <div class="p-week-weather__card c-week-weather__card">
+                    <div class="c-week-weather__card--top">
+                        <p class="c-week-weather__card--top__title" id="js-date3">
+                            <!-- 2月8日 (水) -->
+                        </p>
+                    </div>
+                    <p class="c-week-weather__card--weather-title" id="js-weather3-title"></p>
+                    <div class="c-week-weather__card--weather-img">
+                        <img src="" alt="天気画像" id="js-weather3-img">
+                    </div>
+                    <div class="c-week-weather__card--temp">
+                        <div class="c-week-weather__card--temp__left">
+                            <p class="c-week-weather__card--temp__left--text" id="js-weather3-temp-max"> </p><p class="u-fz16">℃</p>
+                            <p class="c-week-weather__card--temp__left--subtext" id="js-weather3-temp-max-before"></p>
+                        </div>
+                        <div class="c-week-weather__card--temp__right">
+                            <p class="c-week-weather__card--temp__right--text"  id="js-weather3-temp-min"></p><p class="u-fz16">℃</p>
+                            <p class="c-week-weather__card--temp__right--subtext" id="js-weather3-temp-min-before"></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="p-week-weather__card c-week-weather__card">
+                    <div class="c-week-weather__card--top">
+                        <p class="c-week-weather__card--top__title" id="js-date4">
+                            <!-- 2月9日 (木) -->
+                        </p>
+                    </div>
+                    <p class="c-week-weather__card--weather-title" id="js-weather4-title"></p>
+                    <div class="c-week-weather__card--weather-img">
+                        <img src="" alt="天気画像" id="js-weather4-img">
+                    </div>
+                    <div class="c-week-weather__card--temp">
+                        <div class="c-week-weather__card--temp__left">
+                            <p class="c-week-weather__card--temp__left--text" id="js-weather4-temp-max"> </p><p class="u-fz16">℃</p>
+                            <p class="c-week-weather__card--temp__left--subtext" id="js-weather4-temp-max-before"> </p>
+                        </div>
+                        <div class="c-week-weather__card--temp__right">
+                            <p class="c-week-weather__card--temp__right--text" id="js-weather4-temp-min"> </p><p class="u-fz16">℃</p>
+                            <p class="c-week-weather__card--temp__right--subtext" id="js-weather4-temp-min-before"> </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-week-weather__card c-week-weather__card">
+                    <div class="c-week-weather__card--top">
+                        <p class="c-week-weather__card--top__title" id="js-date5">
+                            <!-- 2月10日 (金) -->
+                        </p>
+                    </div>
+                    <p class="c-week-weather__card--weather-title" id="js-weather5-title"></p>
+                    <div class="c-week-weather__card--weather-img">
+                        <img src="" alt="天気画像" id="js-weather5-img">
+                    </div>
+                    <div class="c-week-weather__card--temp">
+                        <div class="c-week-weather__card--temp__left">
+                            <p class="c-week-weather__card--temp__left--text" id="js-weather5-temp-max"> </p><p class="u-fz16">℃</p>
+                            <p class="c-week-weather__card--temp__left--subtext" id="js-weather5-temp-max-before"></p>
+                        </div>
+                        <div class="c-week-weather__card--temp__right">
+                            <p class="c-week-weather__card--temp__right--text" id="js-weather5-temp-min"> </p><p class="u-fz16">℃</p>
+                            <p class="c-week-weather__card--temp__right--subtext" id="js-weather5-temp-min-before"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-week-weather__card c-week-weather__card">
+                    <div class="c-week-weather__card--top">
+                        <p class="c-week-weather__card--top__title" id="js-date6">
+                            <!-- 2月11日 (土) -->
+                        </p>
+                    </div>
+                    <p class="c-week-weather__card--weather-title" id="js-weather6-title"></p>
+                    <div class="c-week-weather__card--weather-img">
+                        <img src="" alt="天気画像" id="js-weather6-img">
+                    </div>
+                    <div class="c-week-weather__card--temp">
+                        <div class="c-week-weather__card--temp__left">
+                            <p class="c-week-weather__card--temp__left--text" id="js-weather6-temp-max"> </p><p class="u-fz16">℃</p>
+                            <p class="c-week-weather__card--temp__left--subtext" id="js-weather6-temp-max-before"> </p>
+                        </div>
+                        <div class="c-week-weather__card--temp__right">
+                            <p class="c-week-weather__card--temp__right--text" id="js-weather6-temp-min"> </p><p class="u-fz16">℃</p>
+                            <p class="c-week-weather__card--temp__right--subtext" id="js-weather6-temp-min-before"> </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-week-weather__card c-week-weather__card">
+                    <div class="c-week-weather__card--top">
+                        <p class="c-week-weather__card--top__title" id="js-date7">
+                            <!-- 2月12日 (日) -->
+                        </p>
+                    </div>
+                    <p class="c-week-weather__card--weather-title" id="js-weather7-title"></p>
+                    <div class="c-week-weather__card--weather-img">
+                        <img src="" alt="天気画像" id="js-weather7-img">
+                    </div>
+                    <div class="c-week-weather__card--temp">
+                        <div class="c-week-weather__card--temp__left">
+                            <p class="c-week-weather__card--temp__left--text" id="js-weather7-temp-max"> </p><p class="u-fz16">℃</p>
+                            <p class="c-week-weather__card--temp__left--subtext" id="js-weather7-temp-max-before"> </p>
+                        </div>
+                        <div class="c-week-weather__card--temp__right">
+                            <p class="c-week-weather__card--temp__right--text" id="js-weather7-temp-min"> </p><p class="u-fz16">℃</p>
+                            <p class="c-week-weather__card--temp__right--subtext" id="js-weather7-temp-min-before"> </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="l-footer">
+        <p class="l-footer__copyright">&copy; DONUTS Co. Ltd.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="_src/js/index.js"></script>
+  </body>
+</html>
